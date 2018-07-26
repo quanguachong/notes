@@ -15,3 +15,5 @@ CRD is cool to create a controller with the desired semantics for a particular w
 1. each TfReplica performs a role: master,parameter server or worker
 
 2. **not to try to hide or replace K8s abstractions**,each TfReplica contains a standard K8s **PodTemplate** to specify the processes (including TF) to run in each replica. It's so nice. Furthermore, the PodTemplate makes it easy for TFJob users to leverage K8s features.
+
+### Controller

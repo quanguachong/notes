@@ -7,7 +7,7 @@
 3. golang
 4. shell
 5. git
-6. linux
+6. helm
 
 ## 2 TO DO
 
