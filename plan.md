@@ -2,14 +2,10 @@
 
 ## 1
 
-1. kubernetes concepts
-2. notebook-operator
-3. golang
-4. shell
-5. git
-6. helm
+1. kubernetes validation
+2. kubernetes net mechanisms
 
 ## 2 TO DO
 
-1. tf-operator's codes
+1. k8s native codes
 2. k8s cluster
