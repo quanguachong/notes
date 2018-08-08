@@ -7,5 +7,4 @@
 
 ## 2 TO DO
 
-1. k8s native codes
-2. k8s cluster
+1. PPT

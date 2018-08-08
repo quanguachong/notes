@@ -67,3 +67,16 @@ channel用于goroutine间通信
         //等待任务完成
         <-done
     }
+
+## go Decoder
+
+json包提供了Decoder和Encoder用来支持JSON数据流的读写。函数NewDecoder和NewEncoder封装了io.Reader和io.Writer接口类型。如下，可以将io.Reader转换到结构体event中
+
+```go
+type event struct{
+
+}
+//body's type is io.Reader
+decoder := json.NewDecoder(body)
+err := decoder.Decoder(&event)
+```
