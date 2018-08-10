@@ -1,0 +1,19 @@
+apiVersion: tensorstack.io/v1
+kind: Notebook
+metadata:
+  name: my-notebook
+spec:
+  user: my-user
+  password: password-test
+  token: token-test
+  deploymentName: ts-notebook-min
+  podSpecs:
+    spec:
+      containers:
+      - name: min-notebook
+        image: tsz.io/busybox
+        command:
+        - sleep
+        - "3000"
+        ports:
+        - containerPort: 80
