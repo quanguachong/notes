@@ -52,5 +52,10 @@ Everything a containerized application writes to **stdout** and **stderr** is ha
 
 Note: the Docker json logging treats each line as a separate message.
 
-By default, if a container restarts, the kubelet keeps one terminated container with its logs. If a pod is evicted from the node, all 
-corresponding containers are also evicted, along with their logs.
+By default, if a container restarts, the kubelet keeps one terminated container with its logs. If a pod is evicted from the node, all corresponding containers are also evicted, along with their logs.
+
+https://kubernetes.io/docs/concepts/cluster-administration/logging/
+
+https://akomljen.com/get-kubernetes-logs-with-efk-stack-in-5-minutes/
+
+https://banzaicloud.com/blog/k8s-logging/
