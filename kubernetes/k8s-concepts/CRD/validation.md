@@ -115,24 +115,51 @@ The following properties are taken from the JSON Schema definition but their def
 |example|Any|A free-form property to include an example of an instance for this schema.(To represent examples that cannot be naturally represented in JSON or YAML, a string value can be used to contain the example with escaping where necessary.)|
 |externalDocs|External Documentation Object|Additional external documentation for this schema.|
 
-### Schema Object Examples
+### keyword
+
+* properties
+
+The properties (key-value pairs) on an object are defined using the properties keyword. The value of properties is an object, where each key is the name of a property and each value is a JSON schema used to validate that property.
+
+e.g. name's type is string, and age's is int whose value in [1-10]
 
 ```yaml
-
 type: object
-required:
-- name
 properties:
   name:
     type: string
-  address:
-    $ref: '#/components/schemas/Address'
   age:
-    type: integer
-    format: int32
-    minimum: 0
+    type: int
+    minimum: 1
+    maximum: 10
+```
 
----
+* required
+
+one can provide a list of required properties using the keyword *required*
+
+e.g. name must be set
+
+```yaml
+type: object
+properties:
+  name:
+    type: string
+  age:
+    type: int
+    minimum: 1
+    maximum: 10
+required:
+- name
+```
+
+* more...
+
+### Schema Object Examples
+
+the following examples are not for kubernetes CRD validations
+
+```yaml
 
 components:
   schemas:
