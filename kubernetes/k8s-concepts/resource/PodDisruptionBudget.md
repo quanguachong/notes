@@ -18,4 +18,28 @@ An application owner can create a PodDisruptionBudget(PDB) object for each appli
 
 ## [PDB Example](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/)
 
-## (TODO: czx)
+## Specifying a PodDisruptionBudget
+
+A PodDisruptionBudget has three fields:
+
+* .spec.selector (required, label selector)
+* .spec.minAvailable (either a number or a percentage)
+* .spec.maxUnabailable (either a number or a percentage)
+
+You can specify only one of **maxUnavailable** and **minAvailable** in a single **PodDisruptionBudget**
+
+**Note:** A disruption budget does not truly guarantee that the specified number/percentage of pods will always be up.
+
+Example PDB Using minAvailable(the following matches pods ):
+
+```yaml
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: zk-pdb
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: zookeeper
+```
