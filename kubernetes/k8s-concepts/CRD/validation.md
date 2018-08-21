@@ -121,13 +121,18 @@ The following properties are taken from the JSON Schema definition but their def
 
 The properties (key-value pairs) on an object are defined using the properties keyword. The value of properties is an object, where each key is the name of a property and each value is a JSON schema used to validate that property.
 
-e.g. name's type is string, and age's is int whose value in [1-10]
+e.g. name's type is string, version is string and must be either "v1.0.0" or "v1.0.1" , and age's is int whose value in [1-10]
 
 ```yaml
 type: object
 properties:
   name:
     type: string
+  version:
+    type: string
+    enum:
+    - "v1.0.0"
+    - "v1.0.1"
   age:
     type: int
     minimum: 1
