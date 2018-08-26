@@ -1,6 +1,4 @@
-# golang notes
-
-## go channel
+# go channel
 
 channel用于goroutine间通信
     1.定义声明
