@@ -21,4 +21,10 @@ git rebase -i <commitID> 进行commit message修改
 
 git rm -r <directory_name>      删除文件夹
 git rm <file_name>              删除文件
+
+git fetch origin master:temp 将远程origin的master分支下载到本地新建的temp
+git diff temp                查看与本地master的不同
+git merge temp               与本地分支合并
+git branch -d temp           删除临时的temp
+
 ```
