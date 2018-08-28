@@ -17,5 +17,20 @@ indirect
 clause
 demonstrate
 explicit
+broker
+recipient
+analogy
+jargon
+gloss over
+durable
+encapsulate
+intensive
+dispatch
+emit
+fanout
+crucial
+prerequisite
+severity
 
+-------------
 niladic
