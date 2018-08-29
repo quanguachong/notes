@@ -1,8 +1,34 @@
 # There are several patterns in rabbitMQ
 
+* [workqueue](#workqueue)
+
 * [publish/subscribe](#publish/subscribe)
 
+* [Routing](#routing)
+
 * [Topics](#topics)
+
+## workqueue
+
+1. distribute tasks among workers
+
+2. Use producer, queue, consumer
+
+3. Illustration
+
+    ![workqueue](./image/workqueue.png)
+
+    many workers will shared tasks from one queue.
+
+    Round-robin dispatch by default.
+
+4. Message acknowledgment
+
+    Different tasks and consumers can cost different time. So, it's not really fair to use round-robin dispatching by default. In order to make sure a message is never lost, RabbitMQ supports **message acknowledgments**.
+
+    An ack is sent back by the consumer to tell RabbitMQ that a particular message has been received, processed and that RabbitMQ is free to delete it. If RabbitMQ doesn't receive an ack when a consumer dies(its channel is closed, connection is closed, or TCP connection is lost), it will re-queue the message and deliver it to another consumer. But, there aren't any message timeouts.
+
+
 
 ## publish/subscribe
 
