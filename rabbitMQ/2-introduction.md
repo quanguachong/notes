@@ -26,7 +26,7 @@ to illustrate the contact of these concepts, see [constructure](#constructure)
 
     * exchange has a few types(direct, topic, headers, fanout) which define rules: Should it be appended to a particular queue? Should it be appended to many queues? Or should it get discarded.
         1. fanout: broadcasts all the messages received to all the queues it knows
-        2. direct: a message goes to the queues whose **routing key** matches the **routing key** of the message(created by producer).
+        2. direct: a message goes to the bindings whose **routing key** matches the **routing key** of the message(created by producer).
 
 3. Bindings: 
     

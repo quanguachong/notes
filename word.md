@@ -31,6 +31,7 @@ fanout
 crucial
 prerequisite
 severity
+criteria
 
 -------------
 niladic
