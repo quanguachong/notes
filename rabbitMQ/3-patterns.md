@@ -28,13 +28,42 @@
 
     An ack is sent back by the consumer to tell RabbitMQ that a particular message has been received, processed and that RabbitMQ is free to delete it. If RabbitMQ doesn't receive an ack when a consumer dies(its channel is closed, connection is closed, or TCP connection is lost), it will re-queue the message and deliver it to another consumer. But, there aren't any message timeouts.
 
+    We can pass ack by ourselves. Set the auto-ack to false. Then when you have done with the work, invoke d.Ack(false) to return ack.
 
+```go
+// set the auto-ack to false
+msgs, err := ch.Consume(
+  q.Name, // queue
+  "",     // consumer
+  false,  // auto-ack
+  false,  // exclusive
+  false,  // no-local
+  false,  // no-wait
+  nil,    // args
+)
+failOnError(err, "Failed to register a consumer")
+
+forever := make(chan bool)
+
+go func() {
+  for d := range msgs {
+    log.Printf("Received a message: %s", d.Body)
+    dot_count := bytes.Count(d.Body, []byte("."))
+    t := time.Duration(dot_count)
+    time.Sleep(t * time.Second)
+    log.Printf("Done")
+    // invoke Ack to notify the work is done
+    d.Ack(false)
+  }
+}()
+
+```
 
 ## publish/subscribe
 
 1. Broadcast messages to many consumers at once.
 
-2. Exchange type is *fanout*
+2. Exchange type is **fanout**
 
 Use producer, exchange, binding, queue, consumer
 
@@ -50,7 +79,7 @@ Concrete codes:
 
 1. Receiving messages selectively.
 
-2. Exchange type is *direct*. Specify **routing-key** in publish and binding.
+2. Exchange type is **direct**. Specify **routing-key** in publish and binding.
 
 3. Illustration
 
@@ -76,7 +105,7 @@ Concrete codes:
 
 1. Receiving messages based on a pattern(topics)
 
-2. Exchange type is *topic*. 
+2. Exchange type is **topic**. 
 
     **routing-key** must be a list of words, delimited by dots(the list's limit is 255 bytes). The words can be anything, but usually they specify some features connected to the message. Examples: "quick.white.rabbit", "happy.daming"
 

@@ -32,6 +32,8 @@ crucial
 prerequisite
 severity
 criteria
+opaque
+variation
 
 -------------
 niladic
