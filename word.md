@@ -34,6 +34,9 @@ severity
 criteria
 opaque
 variation
+criteria  标准，条件
+
+
 
 -------------
 niladic

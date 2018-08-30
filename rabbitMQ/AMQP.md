@@ -65,9 +65,14 @@ Topic exchanges route messages to one or many queues based on matching between a
 
 ### Headers Exchange
 
-A headers exchange is designed for routing on multiple attributes that are more easily expressed as message headers than a routing key.
+Headers exchanges route based on header values. A message is considered matching if the value of the header equals the value specified upon binding.
 
-!! Can add Publishing.Header to complete header exchange, and use queueBind.Arguments to filter. Both's types are map[string]interface{}
+Can specify Publishing.Header and queueBind.Arguments to complete the headers exchanges. Both's types are map[string]interface{}
+
+A special argument named "x-match", which can be added in bindings and publish. It's value can be "any" or "all", "all" is the default value. Differences:
+
+* "all" means all header pairs(key, value) must match.
+* "any" means at least one of the header pairs must match.
 
 ```go
 err = ch.Publish(
@@ -76,7 +81,7 @@ err = ch.Publish(
 		false,  // mandatory
 		false,  // immediate
 		amqp.Publishing{
-			// can add Publishing.Header to complete header exchange
+			// can specify Publishing.Header to complete header exchange
 			ContentType: "text/plain",
 			Body:        []byte(body),
 		})
@@ -91,6 +96,10 @@ err = ch.QueueBind(
 		// this is queueBind.Arguments
 		nil)
 ```
+
+example:
+
+
 
 ## Queues
 
