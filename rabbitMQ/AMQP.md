@@ -97,9 +97,6 @@ err = ch.QueueBind(
 		nil)
 ```
 
-example:
-
-
 
 ## Queues
 
@@ -122,4 +119,3 @@ q, err := ch.QueueDeclare(
 		nil,   // arguments
 	)
 ```
-
