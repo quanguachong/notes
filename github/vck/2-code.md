@@ -2,7 +2,7 @@
 
 different from sample-controller, vck controller uses dynamic client
 
-in ResourceEventHandler, vck controller directly deals with resources without workqueueß
+in ResourceEventHandler, vck controller directly deals with resources without workqueue
 
 ## dynamic client for vck controller
 
@@ -20,7 +20,7 @@ then use
 dynClient.Resource(podAPIResource, *namespace)
 ```
 
-Let's have a look at Client and Resource
+Let's have a look at Client and Resource. Client.Resource is ResourceInterface which is an API interface to specific resource under a dynamic client.
 
 ```go
 // Client is a Kubernetes client that allows you to access metadata
@@ -45,9 +45,9 @@ func (c *Client) Resource(resource *metav1.APIResource, namespace string) Resour
 
 ## VolumeManagerHooks
 
-use VolumeManagerHooks implements controller.Hooks interface
+Use VolumeManagerHooks implements controller.Hooks interface
 
-when use different sourceTypes, VolumeManagerHoooks's Hooks interface(in Add, Update, and Delete) invoke the corresponding DataHandler
+when use different sourceTypes, VolumeManagerHoooks's Hooks interface(in Add, Update, and Delete) invoke the corresponding DataHandler while traversing VolumeManagerHooks.dataHandlers
 
 ```go
 // VolumeManagerHooks implements controller.Hooks interface
@@ -57,7 +57,7 @@ type VolumeManagerHooks struct {
 }
 ```
 
-In controller.go, the Hooks interface solves cache.ResourceEventHandlerFuncs
+In controller.go, the Hooks interface solves cache.ResourceEventHandlerFuncs. In other words, VolumeManagers's Informer EventHandler is Hooks. However, Hooks is just an interface, the actual implement is VolumeManagerHooks in hooks.go
 
 ```go
 // Hooks is the callback interface that defines controller behavior.
@@ -87,7 +87,7 @@ dataHandlers := []handlers.DataHandler{
 hooks := hooks.NewVolumeManagerHooks(crdClient.VckV1alpha1().VolumeManagers(*namespace), dataHandlers)
 
 controller := controller.New(hooks, crdClient)
-------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 // In controller.go
 // New returns a new Controller.
 func New(hooks Hooks, client vckv1alpha1_client.Interface) *Controller {
@@ -126,9 +126,19 @@ func (c *Controller) watch(ctx context.Context, namespace string) {
 }
 ```
 
-## details
+## Core codes
 
-please read codes in pkg/hooks/hooks.go
+The core codes are in pkg/hooks/hooks.go, the struct VolumeManagerHooks. Must read the origin codes in vck.
+
+The core idea is using text/template. 
+1. According to different VolumeConfigs's SourceType, invoke corresponding handler. 
+
+2. Each handler(of NFS, S3, Pachyderm ...) deal with the details. In fact, specify a struct 
+and use text/template to fill the .tmpl file.
+
+3. After that, use unstructed.Untructured{} to receive the data in .tmpl file.
+
+4. Use dynamic client's Resource to create the resources of k8s(which specified in Handler.k8sResourceClients). And record in VolumeManager's status.
 
 ## To Understand
 
