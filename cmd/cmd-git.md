@@ -15,6 +15,7 @@ git branch -a                             查看远程分支
 git branch -r -d origin/<name>            删除远程分支
 git checkout tags/<tag_name> -b <branch_name> 拉取远程tags分支到本地
 
+git log                                   查看commit历史，最新的在最上面
 git reset --hard <commitID>               强行设成commitID对应的版本
 git rebase master                         同步master到当前分支
 git rebase -i <commitID> 进行commit message修改
