@@ -18,6 +18,7 @@ vscode:  code filename
 ## others
 
 vi ~/.bashrc 修改系统变量
+mv <old-name> <new-name> 修改文件名
 
 ## set proxy
 
