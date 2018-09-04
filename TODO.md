@@ -1,10 +1,6 @@
 # TODO
 
 
-half done? 1. amqp connection, channel connection.  Reference: GoDoc amqp
+2. text/template
 
-
-2. rwk mutiple Handler
-
-
-3. cobra
+3. kubernetes concepts

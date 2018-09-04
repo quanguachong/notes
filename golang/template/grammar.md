@@ -1,6 +1,11 @@
 # Grammar
 
-## examples
+Catalog:
+* [File example](#File-example)
+* [Format spaces](#Format-spaces)
+* [Arguments](#Arguments)
+
+## File example
 
 .tmpl file is as below
 
@@ -20,9 +25,23 @@ Josie
 `
 ```
 
-## variable
+## Format spaces
 
-## if else
+{{- text}} means all white space is trimmed preceding the "text"
 
-## with
+{{text -}} means all white space is trimmed after the "text"
+
+for example
+
+```bash 
+{{13 -}} < {{- 45}} 
+```
+
+output: 
+```bash
+13<45
+```
+
+## Arguments
+
 
