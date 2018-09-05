@@ -71,11 +71,21 @@ e.g.:
 
 The custom func is
 ```go
-func add(left, right int) int{
-    return left + right
-}
+tmpl := template.New("test").Funcs(template.FuncMap{
+		"add": func(a,b int) int{
+			return a+b
+		},
+	})
+tmpl,err := tmpl.Parse("hello {{add 1 2}}")
+if err != nil { panic(err) }
+err = tmpl.Execute(os.Stdout, nil)
+if err != nil { panic(err) }
 ```
-You can get 3 by use {{add 1 2}} in .tmpl file.
+
+```bash
+$ go run test.go
+hello 3
+```
 
 --------------------------
 
