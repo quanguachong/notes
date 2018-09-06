@@ -35,8 +35,11 @@ criteria
 opaque
 variation
 criteria  标准，条件
-
-
+discretion 自由裁量权，灵活性
+mandatory 强制的
+redundancy   冗余
+administration 管理
+nuance 细微差别
 
 -------------
 niladic

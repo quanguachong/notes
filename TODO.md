@@ -1,3 +1,6 @@
 # TODO
 
-3. kubernetes concepts
+* kubernetes concepts
+
+* redhat Gluster
+
