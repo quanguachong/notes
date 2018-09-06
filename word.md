@@ -40,6 +40,9 @@ mandatory 强制的
 redundancy   冗余
 administration 管理
 nuance 细微差别
+enterprise 企业，事业；事业心
+precise 精确的
+instantiate 举例说明
 
 -------------
 niladic
