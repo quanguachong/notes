@@ -43,6 +43,8 @@ nuance 细微差别
 enterprise 企业，事业；事业心
 precise 精确的
 instantiate 举例说明
+detect 察觉
+deflate 缩小
 
 -------------
 niladic
