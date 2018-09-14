@@ -45,6 +45,15 @@ precise 精确的
 instantiate 举例说明
 detect 察觉
 deflate 缩小
-
+augment 增加
+immutable 不变的
+cartridge 弹药筒，打印机的墨盒
+encapsulate 压缩，将...装入胶囊
+versus 与……相对
+collocation 配置，排列
+anonymous 匿名的
+delegate 授权
+collision 碰撞，冲突
+mandatory 强制的
 -------------
 niladic
