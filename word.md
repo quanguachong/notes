@@ -2,7 +2,7 @@ delimiter  分隔符
 parallel  平行线
 interleave 交错
 trivial 不重要的，琐碎的
-proceed 
+proceed 开始，继续进行
 evaluate 评估
 intricate 复杂的
 span n.跨度，范围 v.跨越 
@@ -10,30 +10,30 @@ verbatim 逐字的
 minus 减，负数
 precede 优于， 在……之前
 trim 削减，整理
-discard
-successive
-invocation
-indirect
-clause
-demonstrate
-explicit
-broker
-recipient
-analogy
-jargon
-gloss over
-durable
-encapsulate
-intensive
-dispatch
-emit
-fanout
-crucial
-prerequisite
-severity
-criteria
-opaque
-variation
+discard 抛弃
+successive 连续的
+invocation 调用，祈祷
+indirect  间接的
+clause 条款
+demonstrate 证明，论证
+explicit 明确的
+broker 经纪人
+recipient 容易接受的，接受者
+analogy 类比
+jargon 行话，术语
+gloss over 掩盖
+durable 持久的，耐用的
+encapsulate 压缩
+intensive 集中的
+dispatch 分派
+emit 发射
+fanout 展开
+crucial 重要的
+prerequisite 先决条件
+severity 严重，猛烈
+criteria 标准
+opaque 不透明的，不传热的；迟钝的
+variation 变化，变异
 criteria  标准，条件
 discretion 自由裁量权，灵活性
 mandatory 强制的
@@ -55,5 +55,12 @@ anonymous 匿名的
 delegate 授权
 collision 碰撞，冲突
 mandatory 强制的
--------------
-niladic
+reliable 可靠的
+sophisticated 复杂的
+incremental  增加的
+respectively 分别地
+periodic 周期的
+abbreviate 缩写
+authorize 批准，认可
+premium 奖金，保险费；高价的，优质的
+dimensions 维度，规模
