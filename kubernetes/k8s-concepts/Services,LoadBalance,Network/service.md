@@ -22,8 +22,8 @@
             app: MyApp
         ports:
         - protocol: TCP
-        port: 80
-        targetPort: 9376
+          port: 80
+          targetPort: 9376
     ```
     This specification will create a new **Service** object which targets TCP port 9367 on any Pod with the "app=MyApp" label.This **Service** will also be assigned an IP address,which is used by service proxies.The selector will be evaluated continuously and the results will be POSTed to an **Endpoints** object also named "my-service"
 

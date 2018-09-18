@@ -64,3 +64,38 @@ abbreviate 缩写
 authorize 批准，认可
 premium 奖金，保险费；高价的，优质的
 dimensions 维度，规模
+matrix 矩阵；模型
+diagonal 对角线；斜的
+utilize 利用
+incorporate 合并
+redundancy 冗余
+depict 描述，描画
+instantiate 举例说明
+simultaneously 同时地
+sanity  明智
+inspect 检查
+unambiguously 不含糊地，明白地
+semantic 语义的
+retention 保留
+dangle 摇晃
+audit 审计，查账；旁听
+prune 删除，减少；修剪（树枝）
+archive 档案馆；把……存档
+prioritize 给…排出优先级
+holistic 整体的，全盘的
+gradual 逐渐的，平缓的
+prod 刺
+aspire 渴望，立志，追求
+granularity 间隔尺寸，粒度
+tuple 元祖，重数
+shard （金属、玻璃等其他硬物）的碎片
+commercial 商业的，营利的，靠广告收入的
+neutral 中立的
+compatible 兼容的
+delegate 代表
+
+
+
+
+
+
