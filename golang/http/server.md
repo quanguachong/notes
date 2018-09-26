@@ -126,11 +126,11 @@ type ResponseWriter interface{
 
 Considering myhandler is `func(ResponseWriter, *Request)`
 
-You can use `http.HandleFunc("/",myhandler)`
+1. You can use `http.HandleFunc("/",myhandler)`
 
-You can use `http.HandlerFunc(myhandler)` to let myhandler satifies the `type Handler interface`
-
-So you can use `http.Handle("/",http.HandlerFunc(myhandler))`
+2. You can use `http.HandlerFunc(myhandler)` to let myhandler satifies the `type Handler interface`
+   
+   So you can use `http.Handle("/",http.HandlerFunc(myhandler))`
 
 e.g.: the following codes act the same
 

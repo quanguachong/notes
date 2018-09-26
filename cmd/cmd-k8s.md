@@ -12,4 +12,6 @@ kubectl get pod --namespace=<namespace_name> 获取指定namespace下的pod
 kubectl exec -ti <pod_name> -- bash              进入到pod容器里
 
 k -n logging port-forward svc/efk-kibana 7788:443  暴露一个service
+
+minikube start --bootstrapper=localkube
 ```
