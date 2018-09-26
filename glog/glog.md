@@ -1,5 +1,7 @@
 # glog
 
+"github.com/golang/glog"
+
 ## 1111
 
 pflag.CommandLine.AddGoFlagSet(goflag.CommandLine)
