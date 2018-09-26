@@ -26,7 +26,6 @@ durable 持久的，耐用的
 encapsulate 压缩
 intensive 集中的
 dispatch 分派
-emit 发射
 fanout 展开
 crucial 重要的
 prerequisite 先决条件
@@ -48,13 +47,11 @@ deflate 缩小
 augment 增加
 immutable 不变的
 cartridge 弹药筒，打印机的墨盒
-encapsulate 压缩，将...装入胶囊
 versus 与……相对
 collocation 配置，排列
 anonymous 匿名的
 delegate 授权
 collision 碰撞，冲突
-mandatory 强制的
 reliable 可靠的
 sophisticated 复杂的
 incremental  增加的
@@ -68,9 +65,7 @@ matrix 矩阵；模型
 diagonal 对角线；斜的
 utilize 利用
 incorporate 合并
-redundancy 冗余
 depict 描述，描画
-instantiate 举例说明
 simultaneously 同时地
 sanity  明智
 inspect 检查
@@ -92,10 +87,15 @@ shard （金属、玻璃等其他硬物）的碎片
 commercial 商业的，营利的，靠广告收入的
 neutral 中立的
 compatible 兼容的
-delegate 代表
-
-
-
-
-
-
+dominant 占优势的；支配的
+prediction 预报，预言
+cumbersome (系统或过程)耗时的
+spiral 螺旋
+alert 警告
+elaborate 精心制作的，详尽的
+instrument 仪器，工具
+aggregate 合计，集合
+outage 运行中断
+statistics 统计，统计学
+shrink 缩小
+provenance 出处，起源
