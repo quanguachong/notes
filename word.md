@@ -97,3 +97,5 @@ instrument 仪器，工具
 aggregate 合计，集合
 outage 运行中断
 statistics 统计，统计学
+shrink 缩小
+provenance 出处，起源
