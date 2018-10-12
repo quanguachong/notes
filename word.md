@@ -99,3 +99,18 @@ outage 运行中断
 statistics 统计，统计学
 shrink 缩小
 provenance 出处，起源
+quay 码头
+mature 成熟的
+amplify 扩大
+portfolio 公文包，文件夹
+innovative 创新的
+bolster 支持
+meticulous 一丝不苟的
+tandem 串联
+prospective 预期；未来的
+notoriously 众所周知地，名声狼藉地
+optimization 最佳化，最优化
+candidate 候选人
+hierarchical 分层的，等级体系的
+parenthesis 插入语， 圆括号
+partition 划分， 分割
