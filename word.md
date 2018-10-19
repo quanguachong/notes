@@ -114,3 +114,20 @@ candidate 候选人
 hierarchical 分层的，等级体系的
 parenthesis 插入语， 圆括号
 partition 划分， 分割
+notation 符号
+denote 表示
+ensemble n.全体 adv.同时
+confluent 汇合的
+latency 潜伏，潜伏期
+caveat 警告；说明
+adhere 坚持；依附
+foster 培养
+canonical 权威的；牧师的；教规的
+scaffold 脚手架，用支架支撑
+versus 对抗
+seamless 无缝的
+diverse  不同的
+maturity 成熟,到期
+primitive 基元，原始事物
+bootstrap 引导程序，辅助程序
+optimize 使最优化

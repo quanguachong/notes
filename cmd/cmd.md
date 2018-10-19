@@ -15,6 +15,12 @@ go test show glog:
 
 vscode:  code filename
 
+## scp
+
+```bash
+scp cube:.kube/config n04-config
+```
+
 ## others
 
 vi ~/.bashrc 修改系统变量
@@ -32,3 +38,24 @@ v01.corp.tensorstack.net(in browers)
 
 minikube start --docker-env HTTP_PROXY=http://v01.corp.tensorstack.net:3128 \
                  --docker-env HTTPS_PROXY=https://v01.corp.tensorstack.net:3128
+
+## kill the specified thread
+
+```bash
+$ ps aux
+$ ... # the info of threads include PID
+$ kill - 9 <PID>
+```
+
+## nfs
+
+nfs.lab.tensorstack.net
+
+user: wang
+pwd: 111111
+
+edit /etc/exports to add more entries, then restart nfs server
+
+```console
+$ sudo systemctl restart nfs-kernel-server
+```
