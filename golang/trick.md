@@ -27,3 +27,40 @@ r := strings.NewReader("This is a io.reader stream")
 		return nil, err
 	}
 ```
+
+## for loop
+
+The loop in the following code, use the temp variable `ctrl` to avoid override
+
+```go
+// Start the runnables after the cache has synced
+	for _, c := range cm.runnables {
+		// Controllers block, but we want to return an error if any have an error starting.
+		// Write any Start errors to a channel so we can return them
+		ctrl := c
+		go func() {
+			cm.errChan <- ctrl.Start(stop)
+		}()
+	}
+```
+
+## json.Marshal
+
+The struct's fields must be exported to use json.Marshal
+
+```go
+...
+type message struct{
+	// The first letter must be capital
+	Time string
+	Num int
+}
+
+newMessage := message{
+	Time: "2018.11.6"
+	Num: 12
+}
+
+msg,err := json.Marshal(newMessage)
+...
+```

@@ -31,6 +31,8 @@ mv <old-name> <new-name> 修改文件名
 export https_proxy=http://v01:3128
 export http_proxy=http://v01:3128
 
+export no_proxy=10.147.20.139
+
 export https_proxy=http://d01:3128
 export http_proxy=http://d01:3128
 
@@ -58,4 +60,12 @@ edit /etc/exports to add more entries, then restart nfs server
 
 ```console
 $ sudo systemctl restart nfs-kernel-server
+```
+
+## 
+
+smoke test
+
+```go
+err = e.Env("http_proxy", "http://v01:3128").Env("https_proxy", "http://v01:3128").Run(ctx, "dep", "ensure")
 ```

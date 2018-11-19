@@ -1,0 +1,5 @@
+```
+Moon and Sixpence
+
+That must be the story of innumerable couples, and the pattern of life it offers has a homely grace. It reminds you of a placid rivulet, meandering smoothly through green pastures and shaded by pleasant trees, till at last it falls into the vasty sea; but the sea is so calm, so silent, so indifferent, that you are troubled suddenly by a vague uneasiness. Perhaps it is only by a kink in my nature, strong in me even in those days, that I felt in such an existence, the share of the great majority, something amiss. I recognised its social values, I saw its ordered happiness, but a fever in my blood asked for a wilder course. There seemed to me something alarming in such easy delights. In my heart was a desire to live more dangerously. I was not unprepared for jagged rocks and treacherous shoals if I could only have change -- change and the excitement of the unforeseen.
+```

@@ -15,3 +15,16 @@ k -n logging port-forward svc/efk-kibana 7788:443  暴露一个service
 
 minikube start --bootstrapper=localkube
 ```
+
+# 修改resource注释
+
+```bash
+kubectl patch storageclass <your-class-name> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+
+kubectl patch node black.corp.tensorstack.net -p '{"metadata": {"labels":{"nfs-node.tsz.io":"yes"}}}'
+```
+
+
+
+mnist image
+tsz.io/mnist-test/mytfmodel:1.7
