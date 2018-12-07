@@ -1,0 +1,4 @@
+&{map[apiVersion:dev.tensorstack.io/v1beta1 kind:Model metadata:map[creationTimestamp:2018-11-20T03:01:38Z generation:1 name:my-model namespace:mac resourceVersion:67154998 selfLink:/apis/dev.tensorstack.io/v1beta1/namespaces/mac/models/my-model uid:98ed662b-ec70-11e8-854a-70e14c6834dc clusterName:] spec:map[url:model://path-to-my-model]]}
+
+
+&{map[apiVersion:dev.tensorstack.io/v1beta1 kind:Model metadata:map[namespace:mac resourceVersion:67154998 selfLink:/apis/dev.tensorstack.io/v1beta1/namespaces/mac/models/my-model uid:98ed662b-ec70-11e8-854a-70e14c6834dc clusterName: creationTimestamp:2018-11-20T03:01:38Z generation:1 name:my-model] spec:map[url:model://path-to-my-model]]}

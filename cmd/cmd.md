@@ -26,6 +26,22 @@ scp cube:.kube/config n04-config
 vi ~/.bashrc 修改系统变量
 mv <old-name> <new-name> 修改文件名
 
+## base64
+
+encode string "11111111"
+
+```bash
+# echo's flag -n means 不换行输出
+$ echo -n 11111111 | base64
+MTExMTExMTE=
+```
+
+decode string "MTExMTExMTE="
+```bash
+$ echo MTExMTExMTE= | base64 -D
+11111111
+```
+
 ## set proxy
 
 export https_proxy=http://v01:3128
@@ -33,8 +49,8 @@ export http_proxy=http://v01:3128
 
 export no_proxy=10.147.20.139
 
-export https_proxy=http://d01:3128
-export http_proxy=http://d01:3128
+export https_proxy=http://c01:3128
+export http_proxy=http://c01:3128
 
 v01.corp.tensorstack.net(in browers)
 
@@ -46,7 +62,7 @@ minikube start --docker-env HTTP_PROXY=http://v01.corp.tensorstack.net:3128 \
 ```bash
 $ ps aux
 $ ... # the info of threads include PID
-$ kill - 9 <PID>
+$ kill -9 <PID>
 ```
 
 ## nfs

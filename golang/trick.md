@@ -46,7 +46,7 @@ The loop in the following code, use the temp variable `ctrl` to avoid override
 
 ## json.Marshal
 
-The struct's fields must be exported to use json.Marshal
+The struct's fields must be exported when using json.Marshal
 
 ```go
 ...
@@ -63,4 +63,61 @@ newMessage := message{
 
 msg,err := json.Marshal(newMessage)
 ...
+```
+
+```go
+type person struct{
+	...
+}
+person1 := person{...}
+// data's type is []byte
+// But, it is easy to read for human
+data, err := json.MarshalIndent(person1, "", "  ")
+```
+
+## common file operator
+
+```go
+// import ("path/filepath")
+// Get the absolute representation,p's type is string
+p, err := filepath.Abs(filePath)
+
+// Get the fileInfo of p(a filePath),f's type is the interface FileInfo
+f, err := os.Stat(p)
+
+// Get a rooted path name corresponding to the current directory
+wd,err := os.Getwd()
+
+// ioutil.TempDir creates a new directory in the directory dir with
+// a name beginning with prefix(the rest part is a random string auto-generated) 
+// and return the path of the new directory
+tmp, err := ioutil.TempDir(dir,prefix)
+
+// filepath.Join(elem ...string) joins any number of path elements into a single path
+// `os.Create(name string) (*File, error)` create file according to the name
+// if successful,method of returned File can be used for I/O
+file, err := os.Create(filepath.Join(tmp, "stdout"))
+
+// data's type is []byte, 0644 means permissions
+// WriteFile writes data to a file, if the file does not exist
+// it will create the file with the permissions 0644
+err = ioutil.WriteFile(filepath.Join(tmp, "proc"), data, 0644)
+```
+
+## exec in golang
+
+```go
+// import("os/exec")
+// CommandContext is like a command but includes a context(used to kill the process)
+// command's type is Cmd
+cmd := exec.CommandContext(ctx,name,args...)
+
+// Set parts of Cmd
+cmd.Dir = workingDir
+cmd.Env = env
+cmd.Stdout = stdoutFile
+cmd.Stderr = stderrFile
+
+// start the command
+cmd.Start()
 ```

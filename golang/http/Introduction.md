@@ -122,7 +122,7 @@ Hi there, I love monkeys!
 ```
 
 
-1. `http.HandlerFunc("/", handler)` tells the http package to handler all requests to the web root("/") with myhandler. It registers myhandler for the root("/") in the **DefaultServeMux**.
+1. `http.HandleFunc("/", handler)` tells the http package to handler all requests to the web root("/") with myhandler. It registers myhandler for the root("/") in the **DefaultServeMux**.
 
 2. `http.ListenAndServe(":8080", nil)` specifies listening on port 8080. `nil` means it use **DefaultServeMux**. ListenAndserve return an error when an unexpected error occurs, we use log.Fatal to log the error.
 

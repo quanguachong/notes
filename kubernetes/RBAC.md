@@ -131,7 +131,7 @@ rules:
 
 When specified, **verbs** can be "get","delete","update" and "patch" for individual instances of a resource.
 
-the verbs must not be "list", "watch" and "deletecollection"
+the verbs must not be "list", "watch" ,"create" and "deletecollection"
 
 ```yaml
 kind: Role

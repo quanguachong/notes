@@ -94,7 +94,7 @@ spiral 螺旋
 alert 警告
 elaborate 精心制作的，详尽的
 instrument 仪器，工具
-aggregate 合计，集合
+aggregate 合计，集合,聚集
 outage 运行中断
 statistics 统计，统计学
 shrink 缩小
@@ -261,3 +261,26 @@ vulnerable 易受攻击的
 versatile 多才多艺的，通用的
 utility 实用工具
 pseudo 伪君子，冒充的，假的
+prone 俯卧的，易于……的
+simutaneous 同时的，同时发生的
+truncate 截短的；缩短
+strategic   战略的
+idempotent  幂等的
+negotiation  谈判，转让
+spawn 卵；产卵，大量产生
+composite 复合材料，复合的
+profile 轮廓，侧面，外形
+eliminate 消除，排除
+portmanteau  旅行皮箱，混成词；多用途的，多性质的
+ingredient 原料，要素，组成部分
+garnish 装饰
+hermetic 密封的
+refactor 重构
+strip 剥夺，脱去衣服
+navigation 航行，航海，导航
+panel 仪表盘
+provenance  出处，起源
+dedicate 专注，致力，献身
+privilege 特权，优待
+
+
