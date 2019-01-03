@@ -282,5 +282,9 @@ panel 仪表盘
 provenance  出处，起源
 dedicate 专注，致力，献身
 privilege 特权，优待
-
-
+rudimentary 基本的
+cohesive 凝聚的；有结合力的
+integrity 完整；诚信
+compact 合同；紧凑的，简洁的
+intuition 直觉
+parenthese 括号

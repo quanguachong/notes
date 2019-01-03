@@ -25,6 +25,8 @@ k get serviceaccount admin-user --template "{{range .secrets}}{{.name}}{{'\n'}}{
 kubectl patch storageclass <your-class-name> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
 
 kubectl patch node black.corp.tensorstack.net -p '{"metadata": {"labels":{"nfs-node.tsz.io":"yes"}}}'
+
+kubectl patch node black.corp.tensorstack.net -p '{"spec":{"unschedulable":"true"}}'
 ```
 
 # 用kubectl获取resource部分内容
