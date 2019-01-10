@@ -148,6 +148,7 @@ Note: An enumerable property is defined as a property of an object that has an *
 	    console.log(index)
     }
     // Result: "0", "1", "2", "3"
+    // index's type is string
     ```
 
 * Strings
