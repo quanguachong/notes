@@ -1,11 +1,11 @@
-delimiter  分隔符
-parallel  平行线
+delimiter 分隔符
+parallel 平行线
 interleave 交错
 trivial 不重要的，琐碎的
 proceed 开始，继续进行
 evaluate 评估
 intricate 复杂的
-span n.跨度，范围 v.跨越 
+span n.跨度，范围 v.跨越
 verbatim 逐字的
 minus 减，负数
 precede 优于， 在……之前
@@ -13,7 +13,7 @@ trim 削减，整理
 discard 抛弃
 successive 连续的
 invocation 调用，祈祷
-indirect  间接的
+indirect 间接的
 clause 条款
 demonstrate 证明，论证
 explicit 明确的
@@ -33,10 +33,10 @@ severity 严重，猛烈
 criteria 标准
 opaque 不透明的，不传热的；迟钝的
 variation 变化，变异
-criteria  标准，条件
+criteria 标准，条件
 discretion 自由裁量权，灵活性
 mandatory 强制的
-redundancy   冗余
+redundancy 冗余
 administration 管理
 nuance 细微差别
 enterprise 企业，事业；事业心
@@ -54,7 +54,7 @@ delegate 授权
 collision 碰撞，冲突
 reliable 可靠的
 sophisticated 复杂的
-incremental  增加的
+incremental 增加的
 respectively 分别地
 periodic 周期的
 abbreviate 缩写
@@ -67,7 +67,7 @@ utilize 利用
 incorporate 合并
 depict 描述，描画
 simultaneously 同时地
-sanity  明智
+sanity 明智
 inspect 检查
 unambiguously 不含糊地，明白地
 semantic 语义的
@@ -126,7 +126,7 @@ canonical 权威的；牧师的；教规的
 scaffold 脚手架，用支架支撑
 versus 对抗
 seamless 无缝的
-diverse  不同的
+diverse 不同的
 maturity 成熟,到期
 primitive 基元，原始事物
 bootstrap 引导程序，辅助程序
@@ -139,7 +139,7 @@ fraction 分数，小部分
 subconscious 潜意识的
 statistical 统计学的，统计的
 supervise 监督
-concise  简洁的
+concise 简洁的
 intuitive 直觉的
 bias 偏见，偏差
 slope 斜坡，斜率，倾斜
@@ -240,7 +240,7 @@ disambiguate 消除
 reconcile 调解
 hyphen 连字符
 muddle 混合；困惑；胡乱思考
-verbosity   冗长
+verbosity 冗长
 alternate 轮换，交替
 padding 填补，填料
 align 排列，排成一行；结盟
@@ -253,7 +253,7 @@ incur 招致，引发
 vanity 虚荣心，空虚，浮华，无价值的东西
 grasp 抓住，理解
 federation 联合，联邦
-fabric  组织，构造
+fabric   组织，构造
 migration 迁移
 credential 证书
 authenticate 验证
@@ -264,14 +264,14 @@ pseudo 伪君子，冒充的，假的
 prone 俯卧的，易于……的
 simutaneous 同时的，同时发生的
 truncate 截短的；缩短
-strategic   战略的
-idempotent  幂等的
-negotiation  谈判，转让
+strategic 战略的
+idempotent 幂等的
+negotiation 谈判，转让
 spawn 卵；产卵，大量产生
 composite 复合材料，复合的
 profile 轮廓，侧面，外形
 eliminate 消除，排除
-portmanteau  旅行皮箱，混成词；多用途的，多性质的
+portmanteau 旅行皮箱，混成词；多用途的，多性质的
 ingredient 原料，要素，组成部分
 garnish 装饰
 hermetic 密封的
@@ -279,7 +279,7 @@ refactor 重构
 strip 剥夺，脱去衣服
 navigation 航行，航海，导航
 panel 仪表盘
-provenance  出处，起源
+provenance 出处，起源
 dedicate 专注，致力，献身
 privilege 特权，优待
 rudimentary 基本的
@@ -288,3 +288,4 @@ integrity 完整；诚信
 compact 合同；紧凑的，简洁的
 intuition 直觉
 parenthese 括号
+mundane 世俗的，平凡的；世界的

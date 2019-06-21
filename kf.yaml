@@ -1,0 +1,68 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Configuration
+metadata:
+  creationTimestamp: "2019-06-11T02:10:02Z"
+  generation: 1
+  name: mnist-s3-default
+  namespace: czx-kf
+  ownerReferences:
+  - apiVersion: serving.kubeflow.org/v1alpha1
+    blockOwnerDeletion: true
+    controller: true
+    kind: KFService
+    name: mnist-s3
+    uid: 054c5286-8bee-11e9-b904-00e26c680b6b
+  resourceVersion: "74100217"
+  selfLink: /apis/serving.knative.dev/v1alpha1/namespaces/czx-kf/configurations/mnist-s3-default
+  uid: 05a8559c-8bee-11e9-b904-00e26c680b6b
+spec:
+  revisionTemplate:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/class: kpa.autoscaling.knative.dev
+        autoscaling.knative.dev/target: "1"
+      creationTimestamp: null
+      labels:
+        serving.kubeflow.org/kfservice: mnist-s3
+    spec:
+      container:
+        args:
+        - --port=9000
+        - --rest_api_port=8080
+        - --model_name=mnist-s3
+        - --model_base_path=s3://mnist/v1/export
+        command:
+        - /usr/bin/tensorflow_model_server
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              key: awsAccessKeyID
+              name: mysecret
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              key: awsSecretAccessKey
+              name: mysecret
+        - name: S3_USE_HTTPS
+          value: "0"
+        - name: S3_ENDPOINT
+          value: minio-service.kubeflow:9000
+        - name: AWS_ENDPOINT_URL
+          value: http://minio-service.kubeflow:9000
+        image: tensorflow/serving:latest
+        name: ""
+        resources:
+          requests:
+            cpu: "1"
+            memory: 2Gi
+      serviceAccountName: sa
+      timeoutSeconds: 300
+status:
+  conditions:
+  - lastTransitionTime: "2019-06-11T02:11:04Z"
+    status: "True"
+    type: Ready
+  latestCreatedRevisionName: mnist-s3-default-ndkfp
+  latestReadyRevisionName: mnist-s3-default-ndkfp
+  observedGeneration: 1

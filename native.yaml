@@ -1,0 +1,58 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Configuration
+metadata:
+  creationTimestamp: "2019-06-12T07:28:45Z"
+  generation: 1
+  name: nativeservice-sample-default
+  namespace: nativeservice-test
+  ownerReferences:
+  - apiVersion: czx.tensorstack.io/v1beta1
+    blockOwnerDeletion: true
+    controller: true
+    kind: NativeService
+    name: nativeservice-sample
+    uid: b6067908-8ce3-11e9-b904-00e26c680b6b
+  resourceVersion: "74100743"
+  selfLink: /apis/serving.knative.dev/v1alpha1/namespaces/nativeservice-test/configurations/nativeservice-sample-default
+  uid: b60a9ed7-8ce3-11e9-b904-00e26c680b6b
+spec:
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - args:
+        - --port=9000
+        - --rest_api_port=8080
+        - --model_name=nativeservice-sample
+        - --model_base_path=s3://mnist/v1/export
+        command:
+        - /usr/bin/tensorflow_model_server
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              key: accesskey
+              name: mysecret
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              key: secretkey
+              name: mysecret
+        - name: S3_ENDPOINT
+          value: minio-service.kubeflow:9000
+        - name: AWS_ENDPOINT_URL
+          value: http://minio-service.kubeflow:9000
+        - name: S3_VERIFY_SSL
+          value: "false"
+        image: tensorflow/serving:1.13.0
+        name: ""
+        resources: {}
+      timeoutSeconds: 300
+status:
+  conditions:
+  - lastTransitionTime: "2019-06-12T07:30:11Z"
+    status: Unknown
+    type: Ready
+  latestCreatedRevisionName: nativeservice-sample-default-l7dhz
+  observedGeneration: 1

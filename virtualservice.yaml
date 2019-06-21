@@ -1,0 +1,22 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: filebrowser
+  namespace: project-wang
+spec:
+  gateways:
+  - project-gateway
+  hosts:
+  - '*'
+  http:
+  - match:
+    - uri:
+        prefix: /filebrowser/
+    rewrite: 
+      uri: /
+    route:
+    - destination:
+        host: filebrowser
+        port:
+          number: 8889
+    timeout: 300s
