@@ -3,9 +3,9 @@
 启动代理服务器绕开 cors
 
 ```bash
-COOKIE= #从https://proxy.s.kube.tensorstack.net/echo/拿到cookie
+COOKIE= #从https://proxy.n.kube.tensorstack.net/echo/拿到cookie
 cd $HOME/modgo/base
-./bin/corsproxy --v=3 --server=https://proxy.s.kube.tensorstack.net --port=10080 --cookie="$COOKIE"
+./bin/corsproxy --v=3 --server=https://proxy.n.kube.tensorstack.net --port=10080 --cookie="$COOKIE"
 ```
 
 启动 web-console
@@ -13,6 +13,6 @@ cd $HOME/modgo/base
 ```bash
 export REACT_APP_T9K_CRD_GROUP=prod
 export REACT_APP_T9K_PREFIX_ADDRESS='http://localhost:10080/t9k-system'
-cd $HOME/mode/web-console
+cd $HOME/modgo/web-console
 yarn start
 ```

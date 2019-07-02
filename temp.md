@@ -14,7 +14,3 @@ docker run \
  -v /Users/czx/tmp/.filebrowser.json:/.filebrowser.json \
  -p 80:80 \
  filebrowser/filebrowser
-
-    docker run \
-    -p 80:80 \
-    filebrowser/filebrowser
