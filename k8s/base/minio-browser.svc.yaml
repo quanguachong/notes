@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: minio-browser
+  namespace: t9k-czx
+spec:
+  selector:
+    app: minio-browser
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http

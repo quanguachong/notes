@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: t9kservice
+  namespace: t9k-czx
+spec:
+  selector:
+    app: t9kservice
+  ports:
+    - name: grpc
+      port: 9090
+      targetPort: grpc
+    - name: restful
+      port: 8080
+      targetPort: restful

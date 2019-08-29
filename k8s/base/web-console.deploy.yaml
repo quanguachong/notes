@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: web-console
+  namespace: t9k-czx
+  labels:
+    app: web-console
+spec:
+  selector:
+    matchLabels:
+      app: web-console
+  template:
+    metadata:
+      labels:
+        app: web-console
+    spec:
+      containers:
+        - name: web-console
+          image: tsz.io/t9k/web-console:czx
+          ports:
+            - name: http
+              containerPort: 8080
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: 100m
+              memory: 200Mi
+            requests:
+              cpu: 100m
+              memory: 100Mi
+      terminationGracePeriodSeconds: 10

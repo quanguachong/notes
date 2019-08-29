@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-console
+  namespace: t9k-czx
+spec:
+  selector:
+    app: web-console
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http

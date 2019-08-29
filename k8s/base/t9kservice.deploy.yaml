@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: t9kservice
+  namespace: t9k-czx
+  labels:
+    app: t9kservice
+spec:
+  selector:
+    matchLabels:
+      app: t9kservice
+  template:
+    metadata:
+      labels:
+        app: t9kservice
+    spec:
+      containers:
+      - name: t9kservice
+        image: tsz.io/t9k/t9kservice:czx
+        args:
+        - "--show-error-trace"
+        - "--v=2"
+        - "--grpc-address=:9090"
+        - "--restful-address=:8080"
+        ports:
+        - name: grpc
+          containerPort: 9090
+        - name: restful
+          containerPort: 8080
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1Gi
+          requests:
+            cpu: 300m
+            memory: 500Mi
+      terminationGracePeriodSeconds: 10

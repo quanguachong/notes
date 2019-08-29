@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: project-ctl
+  namespace: t9k-czx
+  labels:
+    control-plane: project-ctl
+    controller-tools.k8s.io: "1.0"
+spec:
+  selector:
+    matchLabels:
+      control-plane: project-ctl
+      controller-tools.k8s.io: "1.0"
+  serviceName: project-ctl
+  template:
+    metadata:
+      labels:
+        control-plane: project-ctl
+        controller-tools.k8s.io: "1.0"
+    spec:
+      containers:
+      - name: project-ctl
+        image: tsz.io/t9k/project-ctl:czx
+        args: ["--show-error-trace", "--v=2", "--t9k-group=czx", "--t9k-prefix=/t9k-czx","--modelman-server-image=tsz.io/t9k/modelman:czx","--project-proxy-image=tsz.io/t9k/project-proxy:czx"]
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 100m
+            memory: 300Mi
+          requests:
+            cpu: 100m
+            memory: 200Mi
+      terminationGracePeriodSeconds: 10

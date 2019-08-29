@@ -1,0 +1,33 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: t9kservice
+  namespace: t9k-czx
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - t9k
+  http:
+  - match:
+    - uri:
+        prefix: /t9k-czx/t9kservice/
+    rewrite:
+     uri: /
+    route:
+    - destination:
+        host: t9kservice
+        port:
+          number: 8080
+    corsPolicy:
+      allowOrigin:
+        - "*"
+      allowMethods:
+        - GET
+        - POST
+        - DELETE
+        - PUT
+      allowCredentials: false
+      allowHeaders:
+        - "*"
+      maxAge: "24h"

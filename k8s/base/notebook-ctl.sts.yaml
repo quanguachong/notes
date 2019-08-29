@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: notebook-ctl
+  namespace: t9k-czx
+  labels:
+    control-plane: notebook-ctl
+    controller-tools.k8s.io: "1.0"
+spec:
+  selector:
+    matchLabels:
+      control-plane: notebook-ctl
+      controller-tools.k8s.io: "1.0"
+  serviceName: notebook-ctl
+  template:
+    metadata:
+      labels:
+        control-plane: notebook-ctl
+        controller-tools.k8s.io: "1.0"
+    spec:
+      containers:
+      - name: notebook-ctl
+        image: tsz.io/t9k/notebook-ctl:czx
+        args: ["--show-error-trace", "--v=2", "--t9k-group=czx", "--t9k-prefix=/t9k-czx"]
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 100m
+            memory: 300Mi
+          requests:
+            cpu: 100m
+            memory: 20Mi
+      terminationGracePeriodSeconds: 10

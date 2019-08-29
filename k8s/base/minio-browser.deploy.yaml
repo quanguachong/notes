@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: minio-browser
+  namespace: t9k-czx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minio-browser
+  template:
+    metadata:
+      labels:
+        app: minio-browser
+    spec:
+      containers:
+      - image: tsz.io/t9k/minio-browser:czx
+        imagePullPolicy: Always
+        name: minio-browser
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 200Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
+      restartPolicy: Always

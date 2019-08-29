@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: pipeline-ctl
+  namespace: t9k-czx
+  labels:
+    control-plane: pipeline-ctl
+    controller-tools.k8s.io: "1.0"
+spec:
+  selector:
+    matchLabels:
+      control-plane: pipeline-ctl
+      controller-tools.k8s.io: "1.0"
+  serviceName: pipeline-ctl
+  template:
+    metadata:
+      labels:
+        control-plane: pipeline-ctl
+        controller-tools.k8s.io: "1.0"
+    spec:
+      containers:
+      - name: pipeline-ctl
+        image: tsz.io/t9k/pipeline-ctl:czx
+        args:
+        - "--show-error-trace"
+        - "--v=2"
+        - "--t9k-group=czx"
+        - "--t9k-prefix=/t9k-czx"
+        - "--pipeline-image=tsz.io/t9k/apiserver:czx"
+        - "--scheduledworkflow-image=gcr.io/ml-pipeline/scheduledworkflow:0.1.20"
+        - "--persistence-agent-image=tsz.io/t9k/persistence:czx"
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 100m
+            memory: 300Mi
+          requests:
+            cpu: 100m
+            memory: 20Mi
+      terminationGracePeriodSeconds: 10

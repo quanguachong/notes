@@ -1,0 +1,21 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: minio-browser
+  namespace: t9k-czx
+spec:
+  hosts:
+    - '*'
+  gateways:
+    - t9k
+  http:
+    - match:
+        - uri:
+            prefix: /t9k-czx/minio-browser/
+      rewrite:
+        uri: /
+      route:
+        - destination:
+            host: minio-browser
+            port:
+              number: 8080

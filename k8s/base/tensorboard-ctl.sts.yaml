@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: tensorboard-ctl
+  namespace: t9k-czx
+  labels:
+    control-plane: tensorboard-ctl
+    controller-tools.k8s.io: "1.0"
+spec:
+  selector:
+    matchLabels:
+      control-plane: tensorboard-ctl
+      controller-tools.k8s.io: "1.0"
+  serviceName: tensorboard-ctl
+  template:
+    metadata:
+      labels:
+        control-plane: tensorboard-ctl
+        controller-tools.k8s.io: "1.0"
+    spec:
+      containers:
+      - name: tensorboard-ctl
+        image: tsz.io/t9k/tensorboard-ctl:czx
+        args: ["--show-error-trace", "--v=2", "--t9k-group=czx", "--t9k-prefix=/t9k-czx"]
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 100m
+            memory: 300Mi
+          requests:
+            cpu: 100m
+            memory: 20Mi
+      terminationGracePeriodSeconds: 10

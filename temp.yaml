@@ -1,0 +1,31 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Route
+metadata:
+  name: managed-nativeservice-demo
+spec:
+  traffic:
+  - configurationName: demo-default
+    latestRevision: true
+    percent: 100
+status:
+  address:
+    hostname: managed-nativeservice-demo.sfcopyright.svc.cluster.local
+    url: http://managed-nativeservice-demo.sfcopyright.svc.cluster.local
+  conditions:
+  - lastTransitionTime: "2019-08-19T09:09:52Z"
+    status: "True"
+    type: AllTrafficAssigned
+  - lastTransitionTime: "2019-08-19T09:09:52Z"
+    status: "True"
+    type: IngressReady
+  - lastTransitionTime: "2019-08-19T09:09:52Z"
+    status: "True"
+    type: Ready
+  domain: managed-nativeservice-demo.sfcopyright.example.com
+  domainInternal: managed-nativeservice-demo.sfcopyright.svc.cluster.local
+  observedGeneration: 1
+  traffic:
+  - latestRevision: true
+    percent: 100
+    revisionName: demo-default-2qqpd
+  url: http://managed-nativeservice-demo.sfcopyright.example.com

@@ -1,0 +1,21 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: web-console
+  namespace: t9k-czx
+spec:
+  hosts:
+    - '*'
+  gateways:
+    - t9k
+  http:
+    - match:
+        - uri:
+            prefix: /t9k-czx/web-console/
+      rewrite:
+        uri: /
+      route:
+        - destination:
+            host: web-console
+            port:
+              number: 8080

@@ -1,0 +1,30 @@
+bases:
+- ../../../../../notebook-operator/gen/k8s/output/base
+- ../../../../../project-operator/gen/k8s/output/base
+- ../../../../../explorer-operator/gen/k8s/output/base
+- ../../../../../minio-operator/gen/k8s/output/base
+- ../../../../../tensorboard-operator/gen/k8s/output/base
+- ../../../../../trainingjob-operator/gen/k8s/output/base
+- ../../../../../nativeservice-operator/gen/k8s/output/base
+- ../../../../../pipeline-operator/gen/k8s/output/base
+resources:
+- t9k.ns.yaml
+- t9k.crb.yaml
+- t9k.gw.yaml
+- t9kservice.deploy.yaml
+- t9kservice.svc.yaml
+- t9kservice.vs.yaml
+- minio-browser.deploy.yaml
+- minio-browser.svc.yaml
+- minio-browser.vs.yaml
+- web-console.deploy.yaml
+- web-console.svc.yaml
+- web-console.vs.yaml
+- notebook-ctl.sts.yaml
+- project-ctl.sts.yaml
+- explorer-ctl.sts.yaml
+- minio-ctl.sts.yaml
+- tensorboard-ctl.sts.yaml
+- nativeservice-ctl.sts.yaml
+- trainingjob-ctl.sts.yaml
+- pipeline-ctl.sts.yaml
