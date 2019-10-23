@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: proxy
+  namespace: default
+spec:
+  rules:
+  - host: proxy.s.kube.tensorstack.net
+    http:
+      paths:
+      - backend:
+          serviceName: oauth2-proxy
+          servicePort: 4180
+        path: /
+  tls:
+  - hosts:
+    - proxy.s.kube.tensorstack.net
+    secretName: proxy-s-kube-tls

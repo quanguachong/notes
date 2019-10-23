@@ -1,0 +1,123 @@
+apiVersion: v1
+data:
+  config.yaml: |
+    issuer: https://dex.c.kube.tensorstack.net
+    storage:
+      type: kubernetes
+      config:
+        inCluster: true
+    frontend:
+      theme: t9k
+      issuer: t9k
+    web:
+      http: 0.0.0.0:5556
+    oauth2:
+      skipApprovalScreen: true
+    connectors:
+    - type: ldap
+      name: t9k-corp-ldap
+      id: ldap
+      config:
+        host: d03.corp.tensorstack.net:389
+        # host: d03.corp.tensorstack.net:636
+        #rootCA: /home/wang/.secrets/d03-freeipa.crt
+
+        # TLS setting for this setup.
+        insecureNoSSL: true
+
+        # This would normally be a read-only user.
+        bindDN: uid=ldap-lookup-user,cn=users,cn=accounts,dc=corp,dc=tensorstack,dc=net
+        bindPW: tensorstack
+
+        usernamePrompt: Email Address
+
+        userSearch:
+          baseDN: cn=users,cn=accounts,dc=corp,dc=tensorstack,dc=net
+          filter: "(objectClass=person)"
+          username: mail
+          # "DN" (case sensitive) is a special attribute name. It indicates that
+          # this value should be taken from the entity's DN not an attribute on
+          # the entity.
+          idAttr: DN
+          emailAttr: mail
+          nameAttr: cn
+
+        groupSearch:
+          baseDN: cn=groups,cn=accounts,dc=corp,dc=tensorstack,dc=net
+          filter: "(objectClass=groupOfNames)"
+
+          # A user is a member of a group when their DN matches
+          # the value of a "member" attribute on the group entity.
+          userAttr: DN
+          groupAttr: member
+
+          # The group name should be the "cn" value.
+          nameAttr: cn
+
+    staticClients:
+    - id: t9k
+      redirectURIs:
+      - 'http://127.0.0.1:5555/callback'
+      name: 'Example App'
+      secret: ZXhhbXBsZS1hcHAtc2VjcmV0
+    - id: gangway
+      redirectURIs:
+        - 'https://gangway.c.kube.tensorstack.net/callback'
+      name: 'Gangway App'
+      secret: ZXhhbXBsZS1hcHAtc2VjcmV0
+      trustedPeers:
+        - t9k
+        - oauth2_proxy_echo
+        - oauth2_proxy
+    - id: oauth2_proxy
+      redirectURIs:
+        - 'https://dashboard.c.kube.tensorstack.net/oauth2/callback'
+      name: 'oauth2_proxy'
+      secret: ZXhhbXBsZS1hcHAtc2VjcmV0
+    - id: oauth2_proxy_echo
+      redirectURIs:
+        - 'https://echo.c.kube.tensorstack.net/oauth2/callback'
+      name: 'oauth2_proxy_echo'
+      secret: ZXhhbXBsZS1hcHAtc2VjcmV0
+    - id: gangway-n04
+      redirectURIs:
+        - 'https://n04.gangway.kube.tensorstack.net/callback'
+      name: 'Gangway N04'
+      secret: ZXhhbXBsZS1hcHAtc2VjcmV0
+      trustedPeers:
+        - oauth2_proxy-n04
+    - id: oauth2_proxy-n04
+      redirectURIs:
+        - 'https://proxy.n.kube.tensorstack.net/oauth2/callback'
+      name: 'oauth2_proxy-n04'
+      secret: ZXhhbXBsZS1hcHAtc2VjcmV0
+    - id: gangway-s03
+      redirectURIs:
+        - 'https://s03.gangway.kube.tensorstack.net/callback'
+      name: 'Gangway S03'
+      secret: ZXhhbXBsZS1hcHAtc2VjcmV0
+      trustedPeers:
+        - oauth2_proxy-s03
+    - id: oauth2_proxy-s03
+      redirectURIs:
+        - 'https://proxy.s.kube.tensorstack.net/oauth2/callback'
+      name: 'oauth2_proxy-s03'
+      secret: ZXhhbXBsZS1hcHAtc2VjcmV0
+    - id: gangway-n01
+      redirectURIs:
+        - 'https://n01.gangway.kube.tensorstack.net/callback'
+      name: 'Gangway N01'
+      secret: ZXhhbXBsZS1hcHAtc2VjcmV0
+      trustedPeers:
+        - oauth2_proxy-n01
+    - id: oauth2_proxy-n01
+      redirectURIs:
+        - 'https://secure.d.kube.tensorstack.net/oauth2/callback'
+      name: 'oauth2_proxy-n01'
+      secret: ZXhhbXBsZS1hcHAtc2VjcmV0
+
+    enablePasswordDB: false
+kind: ConfigMap
+metadata:
+  name: dex
+  namespace: dex

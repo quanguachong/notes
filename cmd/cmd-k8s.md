@@ -19,24 +19,23 @@ minikube start --bootstrapper=localkube
 k get serviceaccount admin-user --template "{{range .secrets}}{{.name}}{{'\n'}}{{end}}"
 ```
 
-# 修改resource注释
+# 修改 resource 注释
 
 ```bash
 kubectl patch storageclass <your-class-name> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
 
 kubectl patch node black.corp.tensorstack.net -p '{"metadata": {"labels":{"nfs-node.tsz.io":"yes"}}}'
 
-kubectl patch node black.corp.tensorstack.net -p '{"spec":{"unschedulable":"true"}}'
+kubectl patch node e01.lab.tensorstack.net -p '{"spec":{"unschedulable":false}}'
 ```
 
-# 用kubectl获取resource部分内容
+# 用 kubectl 获取 resource 部分内容
 
 ```bash
 SECRET=$(kubectl get serviceaccount admin-user --namespace "kube-system" --template '{{range .secrets}}{{.name}}{{"\n"}}{{end}}')
 
 TOKEN=$(kubectl get secret "$SECRET" --namespace "kube-system" --template '{{.data.token}}' | base64 --decode)
 ```
-
 
 # Add curl pod
 
@@ -48,11 +47,11 @@ metadata:
   namespace: mac
 spec:
   containers:
-  - name: test
-    image: radial/busyboxplus:curl
-    tty: true
+    - name: test
+      image: radial/busyboxplus:curl
+      tty: true
 ```
 
 ```bash
-$ 
+$
 ```

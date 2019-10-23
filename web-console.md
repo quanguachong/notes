@@ -29,13 +29,20 @@ https://proxy.n.kube.tensorstack.net/t9k-czx/minio-browser/?MinioProxyEndpoint=h
 https://proxy.n.kube.tensorstack.net/browser/?project=https://proxy.n.kube.tensorstack.net/browserproxy&minio=http://minio:9000
 ```
 
-
 ```bash
 https://proxy.n.kube.tensorstack.net/t9k-system/minio-browser/?project=project-wang&minio=demo
 ```
 
 ```bash
 curl -v -H "Host: managed-nativeservice-test.mnist-sample.example.com" http://n04:31380/v1/models/test:predict -d $INPUT_PATH
+```
+
+```bash
+curl -v -H "Host: managed-nativeservice-nativeservice-sample.czxns.example.com" http://n04:31380/v1/models/nativeservice-sample
+```
+
+```bash
+curl -v -H "Host: managed-nativeservice-pytorch-sample.czxns.example.com" http://n04:31380/v1/models/pytorch-sample
 ```
 
 https://proxy.n.kube.tensorstack.net/t9k-system/projects/project-wang/proxy/minio/download/temp/dumpbell-home.mp4?token=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjYxODEwMzYsInN1YiI6InRlbnNvcnN0YWNrIn0.D_w8EXhx4K4bRhGEHdFFuzS-mxA8idPBMDRm8Vuq_8ncaoioWiNG1fxvKqiz0PDWU9ojidm_PjSqLGz9YleedQ&t9k_proxy_endpoint=http://managed-minio-demo:9000&t9k_proxy_request_header_rewrite=Authorization%3A
