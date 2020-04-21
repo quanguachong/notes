@@ -293,10 +293,3 @@ circumvent 绕行，规避
 torrent 急流，奔流
 autonomous 自主的
 complementary 互补的
-
-```yaml
-export T9K_REPOS_LIST='nativeservice-operator notebook-operator explorer-operator minio-operator tensorboard-operator pipeline-operator trainingjob-operator autotune-operator project-operator'
-```
-
-1612301633
-2261534340

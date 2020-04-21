@@ -51,7 +51,3 @@ spec:
       image: radial/busyboxplus:curl
       tty: true
 ```
-
-```bash
-$
-```

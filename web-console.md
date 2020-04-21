@@ -38,7 +38,7 @@ curl -v -H "Host: managed-nativeservice-test.mnist-sample.example.com" http://n0
 ```
 
 ```bash
-curl -v -H "Host: managed-nativeservice-nativeservice-sample.czxns.example.com" http://n04:31380/v1/models/nativeservice-sample
+curl -v -H "Host: managed-nativeservice-61053f0e3ebbd272.t9k-samples.example.com" http://n04:31380/v1/models/normal
 ```
 
 ```bash

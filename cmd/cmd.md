@@ -1,19 +1,34 @@
 # cmd
 
-## virtualenv隔离环境
+## go
+
+```bash
+go env -w GO111MODULE=on
+```
+
+## awk
+
+```bash
+$ echo -e 'hello 1\n hi 2' > test.txt
+$ awk '{print $2}' test.txt
+1
+2
+```
+
+## virtualenv 隔离环境
 
 virtualenv:
-   source venv/bin/activate
-   deactivate
+source venv/bin/activate
+deactivate
 
-## goTest命令行
+## goTest 命令行
 
 go test show glog:
-   go test -v -run=" " -args -alsologtostderr
+go test -v -run=" " -args -alsologtostderr
 
-## 打开vscode
+## 打开 vscode
 
-vscode:  code filename
+vscode: code filename
 
 ## scp
 
@@ -37,6 +52,7 @@ MTExMTExMTE=
 ```
 
 decode string "MTExMTExMTE="
+
 ```bash
 $ echo MTExMTExMTE= | base64 -D
 11111111
@@ -55,7 +71,7 @@ export http_proxy=http://c01:3128
 v01.corp.tensorstack.net(in browers)
 
 minikube start --docker-env HTTP_PROXY=http://v01.corp.tensorstack.net:3128 \
-                 --docker-env HTTPS_PROXY=https://v01.corp.tensorstack.net:3128
+ --docker-env HTTPS_PROXY=https://v01.corp.tensorstack.net:3128
 
 ## kill the specified thread
 
@@ -78,7 +94,7 @@ edit /etc/exports to add more entries, then restart nfs server
 $ sudo systemctl restart nfs-kernel-server
 ```
 
-## 
+##
 
 smoke test
 
